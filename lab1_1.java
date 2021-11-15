@@ -1,15 +1,26 @@
 import java.util.Scanner;
+import java.util.InputMismatchException;
 public class Task1 {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        System.out.print("Введите первое число: ");
-        int a = in.nextInt();
-        System.out.print("Введите второе число: ");
-        int b = in.nextInt();
-        System.out.print("Введите третье число: ");
-        int c = in.nextInt();
-        System.out.print("Введите четвертое число: ");
-        int d = in.nextInt();
+        int a = 0;
+        int b = 0;
+        int c = 0;
+        int d = 0;
+        try {
+            Scanner in = new Scanner(System.in);
+            System.out.print("Введите первое число: ");
+            a = in.nextInt();
+            System.out.print("Введите второе число: ");
+            b = in.nextInt();
+            System.out.print("Введите третье число: ");
+            c = in.nextInt();
+            System.out.print("Введите четвертое число: ");
+            d = in.nextInt();
+            in.close();
+        }
+        catch (InputMismatchException e) {
+            System.out.println("Error");
+        }
         if ((a <= b) & (a <= d) & (a <= c)) {
             System.out.println("Наименьшее число:"+a);
         }
